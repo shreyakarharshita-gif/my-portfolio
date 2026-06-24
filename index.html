@@ -36,7 +36,7 @@
   <section class="hero" id="home">
     <div class="hero-inner">
       <p class="eyebrow">Graphic Designer · Delhi, India</p>
-      <h1 class="hero-name";>
+      <h1 class="hero-name">
         <span class="fname">Harshita</span>
         <br>
         <span class="lname"><em>Shreyakar</em></span>
@@ -323,6 +323,16 @@
     document.querySelectorAll('.project-inner, .about-body, .skills-grid, .contact-grid').forEach(el => {
       el.classList.add('fade-up');
       observer.observe(el);
+    });
+
+    // Mobile dropdown toggle
+    document.querySelectorAll('.nav-dropdown > a').forEach(a => {
+      a.addEventListener('click', e => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          a.parentElement.classList.toggle('open');
+        }
+      });
     });
   </script>
 
